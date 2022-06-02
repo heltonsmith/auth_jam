@@ -1,0 +1,9 @@
+
+<%= current_user ? "Hola user: #{current_user.email}" : 'Hola extraño' %>
+<br>
+
+<% if current_user %>
+ <%= link_to('Log out', sessions_destroy_path(current_user)) %>
+<% else %>
+ <%= link_to('Log in', new_session_path)%>
+<% end %>
